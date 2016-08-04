@@ -13,14 +13,9 @@ echo Server is already running, running monitoring loop
 :started
 C:\Windows\System32\timeout /t 10
 C:\Windows\System32\tasklist /FI "IMAGENAME eq arma3server.exe" 2>NUL | C:\Windows\System32\find /I /N "arma3server.exe">NUL
-
-
-:: start bec
 set becpath="C:\Users\Administrator\Desktop\Server\Bec"
 cd /d %becpath%
 start "" "bec.exe" -f Config.cfg
-
-
 if "%ERRORLEVEL%"=="0" goto loop
 C:\Windows\System32\taskkill /im arma3server.exe
 goto start
